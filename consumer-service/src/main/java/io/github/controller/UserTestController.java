@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.client.UserClient;
-import io.github.dto.User;
+import io.github.dto.UserDTO;
 
 @RestController
 @RequestMapping("/v1/user_test")
@@ -16,7 +16,7 @@ public class UserTestController {
     private UserClient userClient;
 
     @GetMapping("/getUser")
-    public User getUser() {
+    public UserDTO getUser() {
         return userClient.getUser();
     }
 }
