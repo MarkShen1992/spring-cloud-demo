@@ -13,11 +13,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Cacheable("user")
-    public UserDTO getUserDTO() {
+    public UserDTO getUserDTO(String userName) {
         UserEntity userEntity = new UserEntity();
-        userEntity.setUserName("shenjunyu");
-        userEntity.setPassword("123456");
-
+        if ("shenjunyu".equals(userName)) {
+            userEntity.setUserName("shenjunyu");
+            userEntity.setPassword("123456");
+        } else if ("markshen".equals(userName)) {
+            userEntity.setUserName("markshen");
+            userEntity.setPassword("123456");
+        } else {
+            userEntity.setUserName("shenjunyu");
+            userEntity.setPassword("123456");
+        }
         return ModelMapperUtils.copyModelProperties(userEntity, UserDTO.class);
     }
 }

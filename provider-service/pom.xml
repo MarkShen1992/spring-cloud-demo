@@ -9,9 +9,7 @@
     <artifactId>spring-cloud-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <groupId>io.github</groupId>
   <artifactId>provider-service</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <name>provider-service</name>
   <url>http://maven.apache.org</url>
   <properties>
