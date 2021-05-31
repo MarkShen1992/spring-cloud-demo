@@ -23,6 +23,9 @@
     <servlet-api.version>2.5</servlet-api.version>
     <lombok.version>1.18.16</lombok.version>
     <modelmapper.version>2.4.3</modelmapper.version>
+    <mysql8.version>8.0.16</mysql8.version>
+    <mysql5.7.version>5.1.36</mysql5.7.version>
+    <mybatis-plus-boot-starter.version>3.4.3</mybatis-plus-boot-starter.version>
   </properties>
 
   <modules>
@@ -35,6 +38,18 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql8.version}</version>
+      </dependency>
+
+      <!--      <dependency>-->
+      <!--        <groupId>mysql</groupId>-->
+      <!--        <artifactId>mysql-connector-java</artifactId>-->
+      <!--        <version>${mysql5.7.version}</version>-->
+      <!--      </dependency>-->
+
       <dependency>
         <groupId>org.modelmapper</groupId>
         <artifactId>modelmapper</artifactId>
@@ -78,6 +93,21 @@
       </dependency>
 
       <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus-boot-starter.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <scope>runtime</scope>
+        <optional>true</optional>
+        <version>${spring-boot.version}</version>
+      </dependency>
+
+
+      <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
         <version>${gson.version}</version>
@@ -106,11 +136,13 @@
         <artifactId>jackson-databind</artifactId>
         <version>${jackson.version}</version>
       </dependency>
+
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
         <version>${jackson.version}</version>
       </dependency>
+
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-annotations</artifactId>
